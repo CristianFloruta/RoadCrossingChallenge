@@ -10,6 +10,7 @@ class CarManager:
 
     def __init__(self):
         self.all_cars = []
+        self.car_speed = STARTING_MOVE_DISTANCE
 
     def create_car(self):
         chance_to_create_car = randint(1, 6)
@@ -25,6 +26,9 @@ class CarManager:
 
     def move_car(self):
         for car in self.all_cars:
-            x_coord = car.xcor() - MOVE_INCREMENT
+            x_coord = car.xcor() - self.car_speed
             y_coord = car.ycor()
             car.goto(x_coord, y_coord)
+
+    def increase_speed(self):
+        self.car_speed += MOVE_INCREMENT
