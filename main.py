@@ -31,7 +31,7 @@ while game_is_on:
         score.level_up()
     # detect player car collision
     for car in car_manager.all_cars:
-        if car.distance(player) < 30:
+        if car.distance(player) < 25:
             score.game_over()
             game_is_on = False
 
